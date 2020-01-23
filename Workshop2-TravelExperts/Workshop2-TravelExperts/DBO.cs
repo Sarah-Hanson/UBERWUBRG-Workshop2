@@ -82,14 +82,62 @@ namespace Workshop2_TravelExperts {
                             { ReadFromDB(reader, "PackageName", out string output);         o.PackageName        = output; }
                             { ReadFromDB(reader, "PkgAgencyCommision", out decimal output); o.PkgAgencyCommision = output; }
                             { ReadFromDB(reader, "PkgBasePrice", out decimal output);       o.PkgBasePrice       = output; }
-                            { ReadFromDB(reader, "PkgBasePrice", out string output);        o.PkgDesc            = output; }
-                            { ReadFromDB(reader, "PkgBasePrice", out DateTime output);      o.PkgEndDate         = output; }
-                            { ReadFromDB(reader, "PkgBasePrice", out DateTime output);      o.PkgStartDate       = output; }
+                            { ReadFromDB(reader, "PkgDesc", out string output);             o.PkgDesc            = output; }
+                            { ReadFromDB(reader, "PkgEndDate", out DateTime output);        o.PkgEndDate         = output; }
+                            { ReadFromDB(reader, "PkgStartDate", out DateTime output);      o.PkgStartDate       = output; }
                             { GetObjectListFromDB(out BindingList<Product> output, o);      o.ProductsList       = output; }
                             { GetTableFromDB(out DataTable output, o);                      o.ProductsTable      = output; }
                             packages.Add(o);
                         }
                     }
+                }
+                dbConnect.Close();
+            }
+        }
+        public static void GetObjectListFromDB(out BindingList<Supplier> suppliers) {
+            suppliers = new BindingList<Supplier>();
+            using (SqlConnection dbConnect = TravelExpertsDB.GetConnection()) {
+                dbConnect.Open();
+                string query = "select * from products";
+                try {
+                    using (SqlCommand cmd = new SqlCommand(query, dbConnect)) {
+                        //run command and process results
+                        using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection)) {
+                            while (reader.Read()) {
+                                Supplier o = new Supplier();
+                                { ReadFromDB(reader, "SupplierID", out int output); o.SupplierID = output; }
+                                { ReadFromDB(reader, "SupName", out string output); o.SupName    = output; }
+                                suppliers.Add(o);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+                dbConnect.Close();
+            }
+        }
+        public static void GetObjectListFromDB(out BindingList<ProductSupplier> prodSup) {
+            prodSup = new BindingList<ProductSupplier>();
+            using (SqlConnection dbConnect = TravelExpertsDB.GetConnection()) {
+                dbConnect.Open();
+                string query = "select * from products";
+                try {
+                    using (SqlCommand cmd = new SqlCommand(query, dbConnect)) {
+                        //run command and process results
+                        using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection)) {
+                            while (reader.Read()) {
+                                ProductSupplier o = new ProductSupplier();
+                                { ReadFromDB(reader, "ProductID", out int output);         o.ProductID         = output; }
+                                { ReadFromDB(reader, "ProductSupplierID", out int output); o.ProductSupplierID = output; }
+                                prodSup.Add(o);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
                 }
                 dbConnect.Close();
             }
