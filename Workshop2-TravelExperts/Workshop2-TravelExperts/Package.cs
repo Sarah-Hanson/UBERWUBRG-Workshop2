@@ -6,6 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Author: Sarah Hanson
+ * Holds data for the packages table as well as the rows from the products table that are tied to the package
+ */
 namespace Workshop2_TravelExperts {
     class Package {
         public int PackageID { get; set; }
