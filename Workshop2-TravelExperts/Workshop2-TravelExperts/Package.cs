@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,8 @@ namespace Workshop2_TravelExperts {
         public string PkgDesc { get; set; }
         public decimal PkgBasePrice { get; set; }
         public decimal PkgAgencyCommision { get; set; }
-        public BindingList<Product> Products { get; set; }
+        public BindingList<Product> ProductsList { get; set; }
+        public DataTable ProductsTable { get; set; }
 
     }
 
