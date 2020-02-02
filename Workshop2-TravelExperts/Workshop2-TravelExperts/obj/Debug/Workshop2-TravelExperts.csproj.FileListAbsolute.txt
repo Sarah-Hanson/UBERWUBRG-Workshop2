@@ -6,3 +6,12 @@ C:\Users\833878\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Wor
 C:\Users\833878\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.csproj.GenerateResource.cache
 C:\Users\833878\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.exe
 C:\Users\833878\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.pdb
+C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\bin\Debug\Workshop2-TravelExperts.exe.config
+C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\bin\Debug\Workshop2-TravelExperts.exe
+C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\bin\Debug\Workshop2-TravelExperts.pdb
+C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.csprojAssemblyReference.cache
+C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.FrmTravel.resources
+C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.Properties.Resources.resources
+C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.csproj.GenerateResource.cache
+C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.exe
+C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.pdb

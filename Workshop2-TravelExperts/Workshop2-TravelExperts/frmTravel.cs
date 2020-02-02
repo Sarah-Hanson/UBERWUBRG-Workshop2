@@ -9,8 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Workshop2_TravelExperts {
-    public partial class Form1 : Form {
-        public Form1() {
+
+    /// <summary>
+    /// Project by: Team 8 -- Brandon Cuthbertson, Neel Pandya, Sara Hanson
+    /// See Update Notes for non-programming based updates
+    /// </summary>
+    public partial class FrmTravel : Form {
+        public FrmTravel() {
             InitializeComponent();
         }
     }
