@@ -39,8 +39,8 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblCommision = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbPackages
@@ -182,27 +182,28 @@
             this.lblCommision.Size = new System.Drawing.Size(318, 24);
             this.lblCommision.TabIndex = 14;
             // 
-            // button1
+            // btnAddNew
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(193, 347);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 32);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Add New Package";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddNew.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAddNew.ForeColor = System.Drawing.Color.White;
+            this.btnAddNew.Location = new System.Drawing.Point(193, 347);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(168, 32);
+            this.btnAddNew.TabIndex = 15;
+            this.btnAddNew.Text = "Add New Package";
+            this.btnAddNew.UseVisualStyleBackColor = false;
+            this.btnAddNew.Click += new System.EventHandler(this.BtnAddNew_Click);
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(394, 347);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 31);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Edit Package";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(394, 347);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(182, 31);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "Edit Package";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // FrmTravel
             // 
@@ -212,8 +213,8 @@
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 413);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.lblCommision);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lblPrice);
@@ -260,8 +261,8 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblCommision;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
 
