@@ -48,7 +48,7 @@ namespace Workshop2_TravelExperts {
             products = new BindingList<Product>();
             using (SqlConnection dbConnect = TravelExpertsDB.GetConnection()) {
                 dbConnect.Open();
-                string query = "SELECT products.ProductId,ProdName FROM Packages_Products_Suppliers,Packages,Products,Products_Suppliers WHERE(Packages_Products_Suppliers.PackageId = Packages.PackageId) and(Packages_Products_Suppliers.ProductSupplierId = Products_Suppliers.ProductSupplierId) and(Products_Suppliers.ProductId = Products.ProductId) and(Packages.PackageId = " + target.PackageID + "); ";
+                string query = "SELECT products.ProductId,ProdName FROM Packages_Products_Suppliers,Packages,Products,Products_Suppliers WHERE(Packages_Products_Suppliers.PackageId = Packages.PackageId) and(Packages_Products_Suppliers.ProductSupplierId = Products_Suppliers.ProductSupplierId) and(Products_Suppliers.ProductId = Products.ProductId) and(Packages.PackageId = " + target.PackageId + "); ";
                 try {
                     using (SqlCommand cmd = new SqlCommand(query, dbConnect)) {
                         //run command and process results
@@ -78,8 +78,8 @@ namespace Workshop2_TravelExperts {
                     using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection)) {
                         while (reader.Read()) {
                             Package o = new Package();
-                            { ReadFromDB(reader, "PackageID", out int output);              o.PackageID          = output; }
-                            { ReadFromDB(reader, "PackageName", out string output);         o.PackageName        = output; }
+                            { ReadFromDB(reader, "PackageID", out int output);              o.PackageId          = output; }
+                            { ReadFromDB(reader, "PackageName", out string output);         o.PkgName        = output; }
                             { ReadFromDB(reader, "PkgAgencyCommision", out decimal output); o.PkgAgencyCommision = output; }
                             { ReadFromDB(reader, "PkgBasePrice", out decimal output);       o.PkgBasePrice       = output; }
                             { ReadFromDB(reader, "PkgDesc", out string output);             o.PkgDesc            = output; }
@@ -151,7 +151,7 @@ namespace Workshop2_TravelExperts {
             using (SqlConnection dbConnect = TravelExpertsDB.GetConnection()) {
                 dbConnect.Open();
                 products = new DataTable();
-                string query = "SELECT products.ProductId,ProdName FROM Packages_Products_Suppliers,Packages,Products,Products_Suppliers WHERE(Packages_Products_Suppliers.PackageId = Packages.PackageId) and(Packages_Products_Suppliers.ProductSupplierId = Products_Suppliers.ProductSupplierId) and(Products_Suppliers.ProductId = Products.ProductId) and(Packages.PackageId = " + target.PackageID + "); ";
+                string query = "SELECT products.ProductId,ProdName FROM Packages_Products_Suppliers,Packages,Products,Products_Suppliers WHERE(Packages_Products_Suppliers.PackageId = Packages.PackageId) and(Packages_Products_Suppliers.ProductSupplierId = Products_Suppliers.ProductSupplierId) and(Products_Suppliers.ProductId = Products.ProductId) and(Packages.PackageId = " + target.PackageId + "); ";
                 using (SqlCommand cmd = new SqlCommand(query, dbConnect)) {
                     //run command and process results
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd)) {
@@ -214,5 +214,73 @@ namespace Workshop2_TravelExperts {
                 @"Data Source=localhost\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
             return new SqlConnection(connectionString);
         }
+        //To fill the combo box
+        public static List<Package> GetPackage()
+        {
+            List<Package> pack = new List<Package>();// an empty list
+            Package pk; // auxiliary for reading
+                        //create connection
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                // create command
+                string query = "SELECT PackageId,PkgName " +
+                    "FROM Packages " +
+                               "ORDER BY PkgName";
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    // run the command and process results
+                    connection.Open();
+                    using (SqlDataReader reader =
+                        cmd.ExecuteReader(CommandBehavior.CloseConnection))
+                    {
+                        while (reader.Read())
+                        {
+                            // process next record from data reader
+                            pk = new Package();
+                            pk.PackageId =Convert.ToInt32(reader["PackageId"]);
+                            pk.PkgName = Convert.ToString(reader["PkgName"]);
+                            pack.Add(pk);
+                        }
+                    } // closes reader & recycles object
+                } // cmd object recycled
+            } // connection object recycled
+            return pack;
+
+        }
+       public static Package GetPacks(int packID)
+        {
+            Package pack = null;
+            using(SqlConnection connection= TravelExpertsDB.GetConnection())
+            {
+                string query = "SELECT PackageId,PkgName,PkgStartDate,PkgEndDate,PkgDesc,PkgBasePrice,PkgAgencyCommission " +
+                    "FROM Packages " + 
+                    "WHERE PackageId= @PackageId " ;
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@PackageId", packID);
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SingleRow))
+                    {
+                        if (reader.Read()) // if there is data
+                        {
+                            pack = new Package();
+                            pack.PackageId = (int)reader["PackageId"];
+                            pack.PkgName = Convert.ToString(reader["PkgName"]);
+                            pack.PkgStartDate = Convert.ToDateTime(reader["PkgStartDate"]);
+                            pack.PkgEndDate =Convert.ToDateTime(reader["PkgEndDate"]);
+                            pack.PkgDesc = reader["PkgDesc"].ToString();
+                            pack.PkgBasePrice = Convert.ToDecimal(reader["PkgBasePrice"]);
+                            pack.PkgAgencyCommision = Convert.ToDecimal(reader["PkgAgencyCommission"]);
+                            
+                        }
+                    }
+                }
+            }
+            return pack;
+        } 
     }
 }
+    
+
+    
+
