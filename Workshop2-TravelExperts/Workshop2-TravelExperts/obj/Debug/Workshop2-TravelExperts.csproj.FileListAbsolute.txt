@@ -24,3 +24,4 @@ C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Wor
 C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.csproj.GenerateResource.cache
 C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.exe
 C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.pdb
+C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.AddPackage.resources

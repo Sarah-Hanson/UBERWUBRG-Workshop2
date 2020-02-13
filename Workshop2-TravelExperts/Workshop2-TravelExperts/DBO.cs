@@ -85,7 +85,7 @@ namespace Workshop2_TravelExperts {
                             { ReadFromDB(reader, "PkgDesc", out string output);             o.PkgDesc            = output; }
                             { ReadFromDB(reader, "PkgEndDate", out DateTime output);        o.PkgEndDate         = output; }
                             { ReadFromDB(reader, "PkgStartDate", out DateTime output);      o.PkgStartDate       = output; }
-                            { GetObjectListFromDB(out BindingList<Product> output, o);      o.ProductsList       = output; }
+                           // { GetObjectListFromDB(out BindingList<Product> output, o);      o.ProductsList       = output; }
                             { GetTableFromDB(out DataTable output, o);                      o.ProductsTable      = output; }
                             packages.Add(o);
                         }
@@ -247,6 +247,7 @@ namespace Workshop2_TravelExperts {
             return pack;
 
         }
+        //to get the data from database
        public static Package GetPacks(int packID)
         {
             Package pack = null;
@@ -278,6 +279,30 @@ namespace Workshop2_TravelExperts {
             }
             return pack;
         } 
+
+        public static int AddPackage(Package pack)
+        {
+            int pacakgeId = -1;
+            using(SqlConnection conn= TravelExpertsDB.GetConnection())
+            {
+                string Query = "INSERT INTO Packages(PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission) " +
+                    " OUTPUT inserted.PackageId " +
+                    "VALUES(@PkgName, @PkgStartDate, @PkgEndDate, @PkgDesc, @PkgBasePrice, @PkgAgencyCommission)";
+               
+                using(SqlCommand cmd= new SqlCommand(Query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@PkgName", pack.PkgName);
+                    cmd.Parameters.AddWithValue("@PkgStartDate", pack.PkgStartDate);
+                    cmd.Parameters.AddWithValue("@PkgEndDate", pack.PkgEndDate);
+                    cmd.Parameters.AddWithValue("@PkgDesc", pack.PkgDesc);
+                    cmd.Parameters.AddWithValue("@PkgBasePrice", pack.PkgBasePrice);
+                    cmd.Parameters.AddWithValue("@PkgAgencyCommission", pack.PkgAgencyCommision);
+                    conn.Open();
+                    pacakgeId = (int)cmd.ExecuteScalar();
+                }
+            }
+            return pacakgeId;
+        }
     }
 }
     

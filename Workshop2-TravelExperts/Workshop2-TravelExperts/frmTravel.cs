@@ -84,5 +84,12 @@ namespace Workshop2_TravelExperts {
             lblPrice.Text = Convert.ToString(packs.PkgBasePrice);
             lblCommision.Text = Convert.ToString(packs.PkgAgencyCommision);
         }
+
+        private void BtnAddNew_Click(object sender, EventArgs e)
+        {
+            AddPackage addPackageform = new AddPackage();
+           // addPackage.addPackage = true;
+            DialogResult result = addPackageform.ShowDialog();
+        }
     }
 }
