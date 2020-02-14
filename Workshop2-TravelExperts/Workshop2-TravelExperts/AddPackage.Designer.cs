@@ -206,6 +206,7 @@
             this.btnBack.TabIndex = 19;
             this.btnBack.Text = "<&Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // AddPackage
             // 

@@ -53,5 +53,10 @@ namespace Workshop2_TravelExperts
             txtBase.Text = "";
             txtCommission.Text = "";
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
