@@ -30,6 +30,7 @@ namespace Workshop2_TravelExperts
             dtpEnd.Text =Convert.ToString(package.PkgEndDate);
             txtDesc.Text = package.PkgDesc;
             txtBase.Text = Convert.ToString(package.PkgBasePrice);
+
             txtAgency.Text = Convert.ToString(package.PkgAgencyCommision);
         }
 
