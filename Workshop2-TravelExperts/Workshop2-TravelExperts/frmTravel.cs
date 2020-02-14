@@ -13,35 +13,23 @@ namespace Workshop2_TravelExperts {
     /// <summary>
     /// Project by: Team 8 -- Brandon Cuthbertson, Neel Pandya, Sara Hanson
     /// See Update Notes for non-programming based updates
-    /// Program Jobs: 
-    ///     Neel:
-    ///         -Add/Edit Packages
-    ///  Brandon:
-    ///         -Validation
-    ///         -Gui layout
-    ///    Sarah:
-    ///         -Database Integration
     /// </summary>
     public partial class FrmTravel : Form {
-
         List<Package> packages;
+        public Package Package;
         public FrmTravel() {
             InitializeComponent();
-        }
-        public Package Package;
 
+        }
         private void FrmTravel_Load(object sender, EventArgs e)
         {
+            DBO.GetObjectListFromDB(out packages);
             this.LoadComboBox();
-            
         }
-
         private void LoadComboBox()
         {
-             packages = new List<Package>();
             try
             {
-                packages = TravelExpertsDB.GetPackage();
                 cmbPackages.DataSource = packages;
                 cmbPackages.DisplayMember = "PkgName";
                 cmbPackages.ValueMember = "PackageId";
@@ -51,16 +39,32 @@ namespace Workshop2_TravelExperts {
                 MessageBox.Show(ex.Message, ex.GetType().ToString()); ;
             }
         }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+           
+            string val;
+             val = Convert.ToString(cmbPackages.SelectedItem);
+             if (val != null)
+            {
+                this.DisplayPacks();
 
-        private void GetPacks(int PackageID)
+            }
+           
+            else
+            {
+               
+            }
+               
+
+            
+        }
+        private void GetPack(int PackageID)
         {
             Package package;
-            try
-            {
+            try {
                 package = TravelExpertsDB.GetPacks(PackageID);
             }
-            catch(Exception ex)
-            {
+            catch(Exception ex) {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
@@ -69,17 +73,14 @@ namespace Workshop2_TravelExperts {
             Package pack = new Package();
             int packIndex = cmbPackages.SelectedIndex;
             pack = packages[packIndex];
-            pack = TravelExpertsDB.GetPacks(pack.PackageId);
             lblPackID.Text = Convert.ToString(pack.PackageId);
             dateTimePicker1.Value = Convert.ToDateTime(pack.PkgStartDate);
             dateTimePicker2.Text = Convert.ToString(pack.PkgEndDate);
             //lblStart.Text = Convert.ToString(pack.PkgStartDate);
            // lblEnd.Text = Convert.ToString(pack.PkgEndDate);
             lblDesc.Text = pack.PkgDesc;
-            decimal price = decimal.Round(pack.PkgBasePrice, 2, MidpointRounding.AwayFromZero);//Rounds to the nearest Decimal Value
-            lblPrice.Text = price.ToString("c");//Converts to currenct
-            decimal Commision = decimal.Round(pack.PkgAgencyCommision, 2, MidpointRounding.AwayFromZero);
-            lblCommision.Text = Commision.ToString("c");
+            lblPrice.Text = Convert.ToString(pack.PkgBasePrice);
+            lblCommision.Text = Convert.ToString(pack.PkgAgencyCommision);
         }
 
         private void BtnAddNew_Click(object sender, EventArgs e)
@@ -91,7 +92,8 @@ namespace Workshop2_TravelExperts {
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditPackage editpackform = new EditPackage(packages[cmbPackages.SelectedIndex]);
+            Package pack = packages[cmbPackages.SelectedIndex];
+            EditPackage editpackform = new EditPackage(pack);
             DialogResult result = editpackform.ShowDialog();
            
             editpackform.package = Package;
@@ -103,7 +105,7 @@ namespace Workshop2_TravelExperts {
             }
             else if (result == DialogResult.Retry)
             {
-                this.GetPacks(Package.PackageId);
+                this.GetPack(Package.PackageId);
                 if (Package != null)
                 {
                     this.DisplayPacks();
@@ -112,24 +114,6 @@ namespace Workshop2_TravelExperts {
                 {
                     //this.ClearControls();
                 }
-            }
-        }
-
-       
-
-        private void cmbPackages_SelectedValueChanged(object sender, EventArgs e)//Removed Search Button for a removed index changed
-        {
-            string val;
-            val = Convert.ToString(cmbPackages.SelectedItem);
-            if (val != null)
-            {
-                this.DisplayPacks();
-
-            }
-
-            else
-            {
-                MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
             }
         }
     }

@@ -14,14 +14,14 @@ namespace Workshop2_TravelExperts {
      * Object for handling the input and retreival of data from the DB to object classes to be used within the program
      * Visible Functions: GetObjectListFromDB(5 Overloads), GetTableFromTB(5 Overloads)
      */
-    class DBO<T> {
+    class DBO {
         /*
          * The get ObjectListFromDB function overlaod all serve to accept an object list from the caller and
          * fill that list from the DB with the appropriate data from the table, they handle the queries and 
          * data creation based on the inputed list type;
          */
-        public static void GetObjectListFromDB(out BindingList<Product> products) {
-            products = new BindingList<Product>();
+        public static void GetObjectListFromDB(out List<Product> products) {
+            products = new List<Product>();
             using (SqlConnection dbConnect = TravelExpertsDB.GetConnection()) {
                 dbConnect.Open();
                 string query = "select * from products";
@@ -44,8 +44,8 @@ namespace Workshop2_TravelExperts {
                 dbConnect.Close();
             }
         }
-        public static void GetObjectListFromDB(out BindingList<Product> products, Package target) {
-            products = new BindingList<Product>();
+        public static void GetObjectListFromDB(out List<Product> products, Package target) {
+            products = new List<Product>();
             using (SqlConnection dbConnect = TravelExpertsDB.GetConnection()) {
                 dbConnect.Open();
                 string query = "SELECT products.ProductId,ProdName FROM Packages_Products_Suppliers,Packages,Products,Products_Suppliers WHERE(Packages_Products_Suppliers.PackageId = Packages.PackageId) and(Packages_Products_Suppliers.ProductSupplierId = Products_Suppliers.ProductSupplierId) and(Products_Suppliers.ProductId = Products.ProductId) and(Packages.PackageId = " + target.PackageId + "); ";
@@ -68,19 +68,19 @@ namespace Workshop2_TravelExperts {
                 dbConnect.Close();
             }
         }
-        public static void GetObjectListFromDB(out BindingList<Package> packages) {
-            packages = new BindingList<Package>();
+        public static void GetObjectListFromDB(out List<Package> packages) {
+            packages = new List<Package>();
             using (SqlConnection dbConnect = TravelExpertsDB.GetConnection()) {
                 dbConnect.Open();
-                string query = "select * from products";
+                string query = "select * from packages";
                 using (SqlCommand cmd = new SqlCommand(query, dbConnect)) {
                     //run command and process results
                     using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection)) {
                         while (reader.Read()) {
                             Package o = new Package();
-                            { ReadFromDB(reader, "PackageID", out int output);              o.PackageId          = output; }
-                            { ReadFromDB(reader, "PackageName", out string output);         o.PkgName        = output; }
-                            { ReadFromDB(reader, "PkgAgencyCommision", out decimal output); o.PkgAgencyCommision = output; }
+                            { ReadFromDB(reader, "PackageId", out int output);              o.PackageId          = output; }
+                            { ReadFromDB(reader, "PkgName", out string output);         o.PkgName        = output; }
+                            { ReadFromDB(reader, "PkgAgencyCommission", out decimal output); o.PkgAgencyCommision = output; }
                             { ReadFromDB(reader, "PkgBasePrice", out decimal output);       o.PkgBasePrice       = output; }
                             { ReadFromDB(reader, "PkgDesc", out string output);             o.PkgDesc            = output; }
                             { ReadFromDB(reader, "PkgEndDate", out DateTime output);        o.PkgEndDate         = output; }
@@ -94,8 +94,8 @@ namespace Workshop2_TravelExperts {
                 dbConnect.Close();
             }
         }
-        public static void GetObjectListFromDB(out BindingList<Supplier> suppliers) {
-            suppliers = new BindingList<Supplier>();
+        public static void GetObjectListFromDB(out List<Supplier> suppliers) {
+            suppliers = new List<Supplier>();
             using (SqlConnection dbConnect = TravelExpertsDB.GetConnection()) {
                 dbConnect.Open();
                 string query = "select * from products";
@@ -118,8 +118,8 @@ namespace Workshop2_TravelExperts {
                 dbConnect.Close();
             }
         }
-        public static void GetObjectListFromDB(out BindingList<ProductSupplier> prodSup) {
-            prodSup = new BindingList<ProductSupplier>();
+        public static void GetObjectListFromDB(out List<ProductSupplier> prodSup) {
+            prodSup = new List<ProductSupplier>();
             using (SqlConnection dbConnect = TravelExpertsDB.GetConnection()) {
                 dbConnect.Open();
                 string query = "select * from products";
