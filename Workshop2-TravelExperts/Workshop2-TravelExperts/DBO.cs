@@ -31,8 +31,8 @@ namespace Workshop2_TravelExperts {
                         using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection)) {
                             while (reader.Read()) {
                                 Product o = new Product();
-                                { ReadFromDB(reader, "ProductID", out int output);      o.ProductID     = output; }
-                                { ReadFromDB(reader, "ProductName", out string output); o.ProductName   = output; }
+                                { ReadFromDB(reader, "ProductId", out int output);      o.ProductID     = output; }
+                                { ReadFromDB(reader, "ProdName", out string output); o.ProdName   = output; }
                                 products.Add(o);
                             }
                         }
@@ -55,8 +55,8 @@ namespace Workshop2_TravelExperts {
                         using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection)) {
                             while (reader.Read()) {
                                 Product o = new Product();
-                                { ReadFromDB(reader, "ProductID", out int output);      o.ProductID     = output; }
-                                { ReadFromDB(reader, "ProductName", out string output); o.ProductName   = output; }
+                                { ReadFromDB(reader, "ProductId", out int output);      o.ProductID     = output; }
+                                { ReadFromDB(reader, "ProdName", out string output); o.ProdName   = output; }
                                 products.Add(o);
                             }
                         }
