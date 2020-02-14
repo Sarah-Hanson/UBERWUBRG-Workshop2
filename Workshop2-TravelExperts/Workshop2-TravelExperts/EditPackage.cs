@@ -45,6 +45,7 @@ namespace Workshop2_TravelExperts
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
+            Application.Restart();//You have to reload the form when you submit
         }
     
 
@@ -61,6 +62,7 @@ namespace Workshop2_TravelExperts
 
         private void btnBack_Click(object sender, EventArgs e){ //Added by BC
             this.Close();
+            
         }
         private void PutPackageData(Package package)
         {
