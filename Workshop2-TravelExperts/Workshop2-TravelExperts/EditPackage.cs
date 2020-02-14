@@ -23,7 +23,11 @@ namespace Workshop2_TravelExperts
             this.DisplayPackage();
         }
         private void btnSubmit_Click(object sender, EventArgs e)
-        {
+        {   //brandons validations
+
+
+
+            //Neels Code
             Package newPack = new Package();
             newPack.PackageId = package.PackageId;
             this.PutPackageData(newPack);
@@ -45,6 +49,7 @@ namespace Workshop2_TravelExperts
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
+            //Brandons Code
             Application.Restart();//You have to reload the form when you submit
         }
     
