@@ -29,9 +29,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblPackID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblStart = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblEnd = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -40,7 +38,12 @@
             this.lblCommision = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+
             this.btnQuit = new System.Windows.Forms.Button();
+
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+
             this.SuspendLayout();
             // 
             // cmbPackages
@@ -93,30 +96,16 @@
             this.label4.Text = "Start Date: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblStart
-            // 
-            this.lblStart.Location = new System.Drawing.Point(218, 140);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(116, 24);
-            this.lblStart.TabIndex = 6;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(350, 140);
+            this.label6.Location = new System.Drawing.Point(551, 149);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 24);
             this.label6.TabIndex = 7;
             this.label6.Text = "End Date: ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblEnd
-            // 
-            this.lblEnd.Location = new System.Drawing.Point(443, 140);
-            this.lblEnd.Name = "lblEnd";
-            this.lblEnd.Size = new System.Drawing.Size(97, 24);
-            this.lblEnd.TabIndex = 8;
             // 
             // label8
             // 
@@ -195,6 +184,7 @@
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+
             // btnQuit
             // 
             this.btnQuit.BackColor = System.Drawing.Color.DimGray;
@@ -206,6 +196,21 @@
             this.btnQuit.Text = "&Quit";
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(222, 141);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(313, 32);
+            this.dateTimePicker1.TabIndex = 17;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(656, 141);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(339, 32);
+            this.dateTimePicker2.TabIndex = 18;
+
             // 
             // FrmTravel
             // 
@@ -214,8 +219,15 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 413);
+
+          
+            
+
+            this.ClientSize = new System.Drawing.Size(1007, 413);
             this.Controls.Add(this.btnQuit);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.lblCommision);
@@ -224,9 +236,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.lblStart);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPackID);
             this.Controls.Add(this.label2);
@@ -253,9 +263,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPackID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblStart;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblEnd;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Label label10;
@@ -264,7 +272,12 @@
         private System.Windows.Forms.Label lblCommision;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnEdit;
+
         private System.Windows.Forms.Button btnQuit;
+
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+
     }
 }
 

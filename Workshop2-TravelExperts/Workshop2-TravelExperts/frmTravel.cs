@@ -67,12 +67,14 @@ namespace Workshop2_TravelExperts {
         private void DisplayPacks()
         {
             Package pack = new Package();
-            int packIndex = Convert.ToInt32(cmbPackages.SelectedIndex);
+            int packIndex = cmbPackages.SelectedIndex;
             pack = packages[packIndex];
             pack = TravelExpertsDB.GetPacks(pack.PackageId);
             lblPackID.Text = Convert.ToString(pack.PackageId);
-            lblStart.Text = Convert.ToString(pack.PkgStartDate);
-            lblEnd.Text = Convert.ToString(pack.PkgEndDate);
+            dateTimePicker1.Value = Convert.ToDateTime(pack.PkgStartDate);
+            dateTimePicker2.Text = Convert.ToString(pack.PkgEndDate);
+            //lblStart.Text = Convert.ToString(pack.PkgStartDate);
+           // lblEnd.Text = Convert.ToString(pack.PkgEndDate);
             lblDesc.Text = pack.PkgDesc;
             decimal price = decimal.Round(pack.PkgBasePrice, 2, MidpointRounding.AwayFromZero);//Rounds to the nearest Decimal Value
             lblPrice.Text = price.ToString("c");//Converts to currenct
@@ -89,7 +91,7 @@ namespace Workshop2_TravelExperts {
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditPackage editpackform = new EditPackage();
+            EditPackage editpackform = new EditPackage(packages[cmbPackages.SelectedIndex]);
             DialogResult result = editpackform.ShowDialog();
            
             editpackform.package = Package;
