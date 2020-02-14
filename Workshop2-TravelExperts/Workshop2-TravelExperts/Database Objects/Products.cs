@@ -11,6 +11,6 @@ using System.Threading.Tasks;
 namespace Workshop2_TravelExperts {
     class Products {
         public int ProductID { get; set; }
-        public string ProductName { get; set; }
+        public string ProdName { get; set; }
     }
 }

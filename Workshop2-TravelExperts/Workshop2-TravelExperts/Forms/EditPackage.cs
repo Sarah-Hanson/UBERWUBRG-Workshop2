@@ -18,8 +18,13 @@ namespace Workshop2_TravelExperts {
         private void EditPackage_Load(object sender, EventArgs e) {
             this.DisplayPackage();
         }
-        private void btnSubmit_Click(object sender, EventArgs e) {
-            Packages newPack = new Packages();
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {   //brandons validations
+
+
+
+            //Neels Code
+            Package newPack = new Package();
             newPack.PackageId = package.PackageId;
             this.PutPackageData(newPack);
             try {
@@ -37,6 +42,8 @@ namespace Workshop2_TravelExperts {
             catch (Exception ex) {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
+            //Brandons Code
+            Application.Restart();//You have to reload the form when you submit
         }
         private void DisplayPackage() {
             label1.Text = Convert.ToString(package.PackageId);
@@ -50,6 +57,7 @@ namespace Workshop2_TravelExperts {
         }
         private void btnBack_Click(object sender, EventArgs e) { //Added by BC
             this.Close();
+            
         }
         private void PutPackageData(Packages package) {
             package.PkgName = txtPkgName.Text;
@@ -66,6 +74,8 @@ namespace Workshop2_TravelExperts {
             txtBase.Text = "";
             txtDesc.Text = "";
             txtAgency.Text = "";
+            dtpStart.Value = DateTime.Today;
+            dtpEnd.Value = DateTime.Today;
         }
     }
 }

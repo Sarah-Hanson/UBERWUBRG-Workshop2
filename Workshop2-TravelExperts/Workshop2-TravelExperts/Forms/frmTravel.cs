@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Workshop2_TravelExperts {
+namespace Workshop2_TravelExperts
+{
 
     /// Program Jobs: 
     ///     Neel:
@@ -74,21 +75,28 @@ namespace Workshop2_TravelExperts {
             }
             else if (result == DialogResult.Retry) {
                 //this.GetPack(Package.PackageId);
-                if (Package != null) {
+                if (Package != null)
+                {
                     this.DisplayPacks();
                 }
-                else {
+                else
+                {
                     //this.ClearControls();
                 }
             }
         }
-        private void cmbPackages_SelectedValueChanged(object sender, EventArgs e) {//Removed Search Button for a removed index changed
+        private void cmbPackages_SelectedValueChanged(object sender, EventArgs e)
+        {//Removed Search Button for a removed index changed
             string val;
+            
             val = Convert.ToString(cmbPackages.SelectedItem);
-            if (val != null) {
+            if (val != null)
+            {
                 this.DisplayPacks();
+                
             }
-            else {
+            else
+            {
                 MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
             }
         }
@@ -106,6 +114,33 @@ namespace Workshop2_TravelExperts {
                 MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
                 // Roll over and crash
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Package pack = packages[cmbPackages.SelectedIndex];
+            ToAddProduct addProduct = new ToAddProduct(pack);
+            DialogResult result = addProduct.ShowDialog();
+
+            addProduct.packages = Package;
+            if (result == DialogResult.OK)
+            {
+                Package = addProduct.packages;
+                //this.DisplayPacks(p);
+            }
+            else if (result == DialogResult.Retry)
+            {
+                //this.GetPack(Package.PackageId);
+                if (Package != null)
+                {
+                    this.DisplayPacks();
+                }
+                else
+                {
+                    //this.ClearControls();
+                }
+            }
+
         }
     }
 }

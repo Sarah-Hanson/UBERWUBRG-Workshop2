@@ -31,7 +31,7 @@ namespace Workshop2_TravelExperts
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
-
+            Application.Restart();//You have to reload the form when you submit
         }
 
         public void PutPackage(Packages package)
@@ -52,11 +52,14 @@ namespace Workshop2_TravelExperts
             txtDesc.Text = "";
             txtBase.Text = "";
             txtCommission.Text = "";
+            dtpStart.Value = DateTime.Today;
+            dtpEnd.Value = DateTime.Today;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
     }
 }
