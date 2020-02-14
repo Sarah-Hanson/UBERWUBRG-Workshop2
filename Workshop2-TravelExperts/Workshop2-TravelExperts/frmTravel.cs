@@ -13,6 +13,14 @@ namespace Workshop2_TravelExperts {
     /// <summary>
     /// Project by: Team 8 -- Brandon Cuthbertson, Neel Pandya, Sara Hanson
     /// See Update Notes for non-programming based updates
+    /// Program Jobs: 
+    ///     Neel:
+    ///         -Add/Edit Packages
+    ///  Brandon:
+    ///         -Validation
+    ///         -Gui layout
+    ///    Sarah:
+    ///         -Database Integration
     /// </summary>
     public partial class FrmTravel : Form {
 
@@ -44,14 +52,6 @@ namespace Workshop2_TravelExperts {
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-           
-            
-               
-
-            
-        }
         private void GetPacks(int PackageID)
         {
             Package package;
@@ -74,8 +74,10 @@ namespace Workshop2_TravelExperts {
             lblStart.Text = Convert.ToString(pack.PkgStartDate);
             lblEnd.Text = Convert.ToString(pack.PkgEndDate);
             lblDesc.Text = pack.PkgDesc;
-            lblPrice.Text = Convert.ToString(pack.PkgBasePrice);
-            lblCommision.Text = Convert.ToString(pack.PkgAgencyCommision);
+            decimal price = decimal.Round(pack.PkgBasePrice, 2, MidpointRounding.AwayFromZero);//Rounds to the nearest Decimal Value
+            lblPrice.Text = price.ToString("c");//Converts to currenct
+            decimal Commision = decimal.Round(pack.PkgAgencyCommision, 2, MidpointRounding.AwayFromZero);
+            lblCommision.Text = Commision.ToString("c");
         }
 
         private void BtnAddNew_Click(object sender, EventArgs e)
