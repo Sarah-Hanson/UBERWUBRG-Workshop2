@@ -100,10 +100,12 @@ namespace Workshop2_TravelExperts
         private void cmbPackages_SelectedValueChanged(object sender, EventArgs e)
         {//Removed Search Button for a removed index changed
             string val;
+            
             val = Convert.ToString(cmbPackages.SelectedItem);
             if (val != null)
             {
                 this.DisplayPacks();
+                
             }
             else
             {
