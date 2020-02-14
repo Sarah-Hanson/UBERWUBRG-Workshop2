@@ -71,8 +71,8 @@ namespace Workshop2_TravelExperts {
             pack = packages[packIndex];
             pack = TravelExpertsDB.GetPacks(pack.PackageId);
             lblPackID.Text = Convert.ToString(pack.PackageId);
-            dateTimePicker1.Value = Convert.ToDateTime(pack.PkgStartDate);
-            dateTimePicker2.Text = Convert.ToString(pack.PkgEndDate);
+            dtpStart.Value = Convert.ToDateTime(pack.PkgStartDate);
+            dtpEnd.Text = Convert.ToString(pack.PkgEndDate);
             //lblStart.Text = Convert.ToString(pack.PkgStartDate);
            // lblEnd.Text = Convert.ToString(pack.PkgEndDate);
             lblDesc.Text = pack.PkgDesc;

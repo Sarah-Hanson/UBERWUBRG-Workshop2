@@ -38,12 +38,9 @@
             this.lblCommision = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-
             this.btnQuit = new System.Windows.Forms.Button();
-
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // cmbPackages
@@ -184,7 +181,6 @@
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-
             // btnQuit
             // 
             this.btnQuit.BackColor = System.Drawing.Color.DimGray;
@@ -196,21 +192,24 @@
             this.btnQuit.Text = "&Quit";
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
-
-            // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(222, 141);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(313, 32);
-            this.dateTimePicker1.TabIndex = 17;
+            // dtpStart
             // 
-            // dateTimePicker2
+            this.dtpStart.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtpStart.CalendarMonthBackground = System.Drawing.SystemColors.MenuText;
+            this.dtpStart.Enabled = false;
+            this.dtpStart.Location = new System.Drawing.Point(222, 141);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(313, 32);
+            this.dtpStart.TabIndex = 17;
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(656, 141);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(339, 32);
-            this.dateTimePicker2.TabIndex = 18;
-
+            // dtpEnd
+            // 
+            this.dtpEnd.Enabled = false;
+            this.dtpEnd.Location = new System.Drawing.Point(656, 141);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(339, 32);
+            this.dtpEnd.TabIndex = 18;
             // 
             // FrmTravel
             // 
@@ -219,15 +218,10 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-
-          
-            
-
             this.ClientSize = new System.Drawing.Size(1007, 413);
             this.Controls.Add(this.btnQuit);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-
+            this.Controls.Add(this.dtpEnd);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.lblCommision);
@@ -275,8 +269,8 @@
 
         private System.Windows.Forms.Button btnQuit;
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
 
     }
 }
