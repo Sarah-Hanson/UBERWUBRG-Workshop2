@@ -111,7 +111,9 @@ namespace Workshop2_TravelExperts {
             }
         }
 
-        private void cmbPackages_DisplayMemberChanged(object sender, EventArgs e)
+       
+
+        private void cmbPackages_SelectedValueChanged(object sender, EventArgs e)//Removed Search Button for a removed index changed
         {
             string val;
             val = Convert.ToString(cmbPackages.SelectedItem);
@@ -123,7 +125,7 @@ namespace Workshop2_TravelExperts {
 
             else
             {
-
+                MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
             }
         }
     }
