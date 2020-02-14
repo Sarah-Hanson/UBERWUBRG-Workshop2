@@ -55,6 +55,8 @@
             this.cmbPackages.Name = "cmbPackages";
             this.cmbPackages.Size = new System.Drawing.Size(323, 32);
             this.cmbPackages.TabIndex = 0;
+            
+            this.cmbPackages.SelectedValueChanged += new System.EventHandler(this.cmbPackages_SelectedValueChanged_1);
             // 
             // btnSearch
             // 
@@ -66,7 +68,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            
             // 
             // label1
             // 

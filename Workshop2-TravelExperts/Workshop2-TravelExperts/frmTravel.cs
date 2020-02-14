@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 namespace Workshop2_TravelExperts {
 
-    /// <summary>
-    /// Project by: Team 8 -- Brandon Cuthbertson, Neel Pandya, Sara Hanson
-    /// See Update Notes for non-programming based updates
-    /// </summary>
+    /// Program Jobs: 
+    ///     Neel:
+    ///         -Add/Edit Packages
+    ///  Brandon:
+    ///         -Validation
+    ///         -Gui layout
+    ///    Sarah:
+    ///         -Database Integration
     public partial class FrmTravel : Form {
         List<Package> packages;
         public Package Package;
@@ -41,18 +45,7 @@ namespace Workshop2_TravelExperts {
                 MessageBox.Show(ex.Message, ex.GetType().ToString()); ;
             }
         }
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string val;
-             val = Convert.ToString(cmbPackages.SelectedItem);
-            if (val != null) {
-                this.DisplayPacks();
-            }
-            else {
-                // Roll over and crash
-            }
  
-        }
         private void DisplayPacks() {
             Package pack = new Package();
             int packIndex = cmbPackages.SelectedIndex;
@@ -63,8 +56,10 @@ namespace Workshop2_TravelExperts {
             lblStart.Text = (pack.PkgStartDate).ToString("MMMM dd, yyyy");
            lblEnd.Text = (pack.PkgEndDate).ToString("MMMM dd, yyyy");
             lblDesc.Text = pack.PkgDesc;
-            lblPrice.Text = Convert.ToString(pack.PkgBasePrice);
-            lblCommision.Text = Convert.ToString(pack.PkgAgencyCommision);
+            decimal price = decimal.Round(pack.PkgBasePrice, 2, MidpointRounding.AwayFromZero);//Rounds to the nearest Decimal Value
+            lblPrice.Text = price.ToString("c");//Converts to currenct
+            decimal Commision = decimal.Round(pack.PkgAgencyCommision, 2, MidpointRounding.AwayFromZero);
+            lblCommision.Text = Commision.ToString("c");
         }
         private void BtnAddNew_Click(object sender, EventArgs e){
             AddPackage addPackageform = new AddPackage();
@@ -106,6 +101,23 @@ namespace Workshop2_TravelExperts {
         private void btnQuit_Click(object sender, EventArgs e)//added by bc
         {
             Close();
+        }
+
+      
+
+        private void cmbPackages_SelectedValueChanged_1(object sender, EventArgs e)
+        {
+            string val;
+            val = Convert.ToString(cmbPackages.SelectedItem);
+            if (val != null)
+            {
+                this.DisplayPacks();
+            }
+            else
+            {
+                MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
+                // Roll over and crash
+            }
         }
     }
 }

@@ -120,6 +120,8 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.Black;
+            this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.Location = new System.Drawing.Point(331, 26);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
@@ -128,6 +130,8 @@
             // 
             // txtDesc
             // 
+            this.txtDesc.BackColor = System.Drawing.Color.Black;
+            this.txtDesc.ForeColor = System.Drawing.SystemColors.Window;
             this.txtDesc.Location = new System.Drawing.Point(331, 168);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesc.Name = "txtDesc";
@@ -136,6 +140,8 @@
             // 
             // txtBase
             // 
+            this.txtBase.BackColor = System.Drawing.Color.Black;
+            this.txtBase.ForeColor = System.Drawing.SystemColors.Window;
             this.txtBase.Location = new System.Drawing.Point(331, 213);
             this.txtBase.Margin = new System.Windows.Forms.Padding(4);
             this.txtBase.Name = "txtBase";
@@ -144,6 +150,8 @@
             // 
             // txtCommission
             // 
+            this.txtCommission.BackColor = System.Drawing.Color.Black;
+            this.txtCommission.ForeColor = System.Drawing.SystemColors.Window;
             this.txtCommission.Location = new System.Drawing.Point(331, 264);
             this.txtCommission.Margin = new System.Windows.Forms.Padding(4);
             this.txtCommission.Name = "txtCommission";
