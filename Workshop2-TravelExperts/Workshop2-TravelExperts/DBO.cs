@@ -303,8 +303,53 @@ namespace Workshop2_TravelExperts {
             }
             return pacakgeId;
         }
-    }
+
+        public static bool UpdatePackage(Package oldPack, Package newPack)
+        {
+            int count; // how many rows updated
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                string updateStatement =
+                    "UPDATE Package SET " +
+                    " PkgName = @newPkgName, " +
+                    " PkgStartDate = @newPkgStartDate, " +
+                    " PkgEndDate = @newPkgEndDate, " +
+                    " PkgDesc = @newPkgDesc, " +
+                    " PkgBasePrice = @newPkgBasePrice " +
+                    "PkgAgencyCommission=@newPkgAgencyCommission " +
+                    "WHERE PackageId = @oldPackageId " + 
+                    " AND PkName = @oldPkgName " + 
+                    " AND PkgStartDate = @oldPkgStartDate " +
+                    " AND PkgEndDate = @oldPkgEndDate " +
+                    " AND PkgDesc = @oldPkgDesc " +
+                    " AND PkgBasePrice = @oldPkgBasePrice " +
+                    " AND PkgAgencyCommission = @oldPkgAgencyCommission ";
+                using (SqlCommand cmd = new SqlCommand(updateStatement, connection))
+                {
+                    cmd.Parameters.AddWithValue("@newPkgName", newPack.PkgName);
+                    cmd.Parameters.AddWithValue("@newPkgStartDate", newPack.PkgStartDate);
+                    cmd.Parameters.AddWithValue("@newPkgEndDate", newPack.PkgEndDate);
+                    cmd.Parameters.AddWithValue("@newPkgDesc", newPack.PkgDesc);
+                    cmd.Parameters.AddWithValue("@newPkgBasePrice", newPack.PkgBasePrice);
+                    cmd.Parameters.AddWithValue("@newPkgAgencyCommision", newPack.PkgAgencyCommision);
+                    cmd.Parameters.AddWithValue("@oldPackageId", oldPack.PackageId);
+                    cmd.Parameters.AddWithValue("@oldPkgName", oldPack.PkgName);
+                    cmd.Parameters.AddWithValue("@oldPkgStartDate", oldPack.PkgStartDate);
+                    cmd.Parameters.AddWithValue("@oldPkgEndDate", oldPack.PkgEndDate);
+                    cmd.Parameters.AddWithValue("@oldPkgDesc", oldPack.PkgDesc);
+                    cmd.Parameters.AddWithValue("@oldPkgBasePrice", oldPack.PkgBasePrice);
+                    cmd.Parameters.AddWithValue("@oldPkgAgencyCommision", oldPack.PkgAgencyCommision);
+                    connection.Open();
+                    count = cmd.ExecuteNonQuery(); // returns how many rows updated
+                }
+            }
+
+            return (count > 0);
+        }
+
+    } // end class
 }
+
     
 
     

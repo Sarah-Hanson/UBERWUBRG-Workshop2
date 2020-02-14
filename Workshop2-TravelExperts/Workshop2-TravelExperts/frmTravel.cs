@@ -15,9 +15,12 @@ namespace Workshop2_TravelExperts {
     /// See Update Notes for non-programming based updates
     /// </summary>
     public partial class FrmTravel : Form {
+
+        List<Package> packages;
         public FrmTravel() {
             InitializeComponent();
         }
+        public Package Package;
 
         private void FrmTravel_Load(object sender, EventArgs e)
         {
@@ -27,7 +30,7 @@ namespace Workshop2_TravelExperts {
 
         private void LoadComboBox()
         {
-            List<Package> packages = new List<Package>();
+             packages = new List<Package>();
             try
             {
                 packages = TravelExpertsDB.GetPackage();
@@ -60,7 +63,7 @@ namespace Workshop2_TravelExperts {
 
             
         }
-        /*private void GetPacks(int PackageID)
+        private void GetPacks(int PackageID)
         {
             Package package;
             try
@@ -71,18 +74,19 @@ namespace Workshop2_TravelExperts {
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
-        }*/
+        }
         private void DisplayPacks()
         {
-            Package packs = new Package();
-            int packID = Convert.ToInt32(cmbPackages.SelectedValue);
-            packs = TravelExpertsDB.GetPacks(packID);
-            lblPackID.Text = Convert.ToString(packs.PackageId);
-            lblStart.Text = Convert.ToString(packs.PkgStartDate);
-            lblEnd.Text = Convert.ToString(packs.PkgEndDate);
-            lblDesc.Text = packs.PkgDesc;
-            lblPrice.Text = Convert.ToString(packs.PkgBasePrice);
-            lblCommision.Text = Convert.ToString(packs.PkgAgencyCommision);
+            Package pack = new Package();
+            int packIndex = Convert.ToInt32(cmbPackages.SelectedIndex);
+            pack = packages[packIndex];
+            pack = TravelExpertsDB.GetPacks(pack.PackageId);
+            lblPackID.Text = Convert.ToString(pack.PackageId);
+            lblStart.Text = Convert.ToString(pack.PkgStartDate);
+            lblEnd.Text = Convert.ToString(pack.PkgEndDate);
+            lblDesc.Text = pack.PkgDesc;
+            lblPrice.Text = Convert.ToString(pack.PkgBasePrice);
+            lblCommision.Text = Convert.ToString(pack.PkgAgencyCommision);
         }
 
         private void BtnAddNew_Click(object sender, EventArgs e)
@@ -92,5 +96,30 @@ namespace Workshop2_TravelExperts {
             DialogResult result = addPackageform.ShowDialog();
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            EditPackage editpackform = new EditPackage();
+            DialogResult result = editpackform.ShowDialog();
+           
+            editpackform.package = Package;
+           
+            if (result == DialogResult.OK)
+            {
+                Package = editpackform.package;
+                //this.DisplayPacks(p);
+            }
+            else if (result == DialogResult.Retry)
+            {
+                this.GetPacks(Package.PackageId);
+                if (Package != null)
+                {
+                    this.DisplayPacks();
+                }
+                else
+                {
+                    //this.ClearControls();
+                }
+            }
+        }
     }
 }

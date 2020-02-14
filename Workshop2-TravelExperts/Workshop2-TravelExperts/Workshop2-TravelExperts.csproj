@@ -53,6 +53,12 @@
       <DependentUpon>AddPackage.cs</DependentUpon>
     </Compile>
     <Compile Include="DBO.cs" />
+    <Compile Include="EditPackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPackage.Designer.cs">
+      <DependentUpon>EditPackage.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTravel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Supplier.cs" />
     <EmbeddedResource Include="AddPackage.resx">
       <DependentUpon>AddPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPackage.resx">
+      <DependentUpon>EditPackage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTravel.resx">
       <DependentUpon>frmTravel.cs</DependentUpon>
