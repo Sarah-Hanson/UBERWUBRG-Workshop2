@@ -208,7 +208,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PackageId);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditPackage";
             this.Text = "EditPackage";
             this.Load += new System.EventHandler(this.EditPackage_Load);

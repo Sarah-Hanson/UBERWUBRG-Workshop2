@@ -78,12 +78,14 @@ namespace Workshop2_TravelExperts {
         private void DisplayPacks()
         {
             Package pack = new Package();
-            int packIndex = Convert.ToInt32(cmbPackages.SelectedIndex);
+            int packIndex = cmbPackages.SelectedIndex;
             pack = packages[packIndex];
             pack = TravelExpertsDB.GetPacks(pack.PackageId);
             lblPackID.Text = Convert.ToString(pack.PackageId);
-            lblStart.Text = Convert.ToString(pack.PkgStartDate);
-            lblEnd.Text = Convert.ToString(pack.PkgEndDate);
+            dateTimePicker1.Value = Convert.ToDateTime(pack.PkgStartDate);
+            dateTimePicker2.Text = Convert.ToString(pack.PkgEndDate);
+            //lblStart.Text = Convert.ToString(pack.PkgStartDate);
+           // lblEnd.Text = Convert.ToString(pack.PkgEndDate);
             lblDesc.Text = pack.PkgDesc;
             lblPrice.Text = Convert.ToString(pack.PkgBasePrice);
             lblCommision.Text = Convert.ToString(pack.PkgAgencyCommision);
@@ -98,7 +100,7 @@ namespace Workshop2_TravelExperts {
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditPackage editpackform = new EditPackage();
+            EditPackage editpackform = new EditPackage(packages[cmbPackages.SelectedIndex]);
             DialogResult result = editpackform.ShowDialog();
            
             editpackform.package = Package;

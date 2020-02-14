@@ -12,12 +12,12 @@ namespace Workshop2_TravelExperts
 {
     public partial class EditPackage : Form
     {
-        public EditPackage()
+        public Package package;
+        public EditPackage(Package pack)
         {
             InitializeComponent();
+            package = pack;
         }
-
-        public Package package;
         private void EditPackage_Load(object sender, EventArgs e)
         {
             this.DisplayPackage();
@@ -32,8 +32,8 @@ namespace Workshop2_TravelExperts
 
             //label1.Text = Convert.ToString(cmbPackages.SelectedValue);
             txtPkgName.Text = package.PkgName;
-            dtpStart.Value = package.PkgStartDate;
-            dtpEnd.Value = package.PkgEndDate;
+            dtpStart.Text = Convert.ToString(package.PkgStartDate);
+            dtpEnd.Text =Convert.ToString(package.PkgEndDate);
             txtDesc.Text = package.PkgDesc;
             txtBase.Text = Convert.ToString(package.PkgBasePrice);
             txtAgency.Text =Convert.ToString(package.PkgAgencyCommision);
