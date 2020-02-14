@@ -46,6 +46,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PackageId
@@ -230,12 +231,23 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // lblError
+            // 
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(222, 401);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(380, 45);
+            this.lblError.TabIndex = 19;
+            // 
             // EditPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(634, 508);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
@@ -283,5 +295,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label lblError;
     }
 }
