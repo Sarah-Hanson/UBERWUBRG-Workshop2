@@ -43,6 +43,7 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.lblStart = new System.Windows.Forms.Label();
             this.lblEnd = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbPackages
@@ -191,7 +192,7 @@
             // 
             this.btnQuit.BackColor = System.Drawing.Color.DimGray;
             this.btnQuit.ForeColor = System.Drawing.Color.White;
-            this.btnQuit.Location = new System.Drawing.Point(582, 347);
+            this.btnQuit.Location = new System.Drawing.Point(813, 348);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(182, 31);
             this.btnQuit.TabIndex = 17;
@@ -233,6 +234,18 @@
             this.lblEnd.Size = new System.Drawing.Size(322, 24);
             this.lblEnd.TabIndex = 20;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(582, 347);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 30);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Add Product";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmTravel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -241,6 +254,7 @@
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1007, 413);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblEnd);
             this.Controls.Add(this.lblStart);
             this.Controls.Add(this.btnQuit);
@@ -297,6 +311,7 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label lblStart;
         private System.Windows.Forms.Label lblEnd;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -28,3 +28,4 @@ C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Wor
 C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.EditPackage.resources
 C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.AddPackage.resources
 C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.EditPackage.resources
+C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.ToAddProduct.resources

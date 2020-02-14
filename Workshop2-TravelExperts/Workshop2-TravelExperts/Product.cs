@@ -9,8 +9,8 @@ using System.Threading.Tasks;
  *  Holds data for the Products table
  */
 namespace Workshop2_TravelExperts {
-    class Product {
+    public class Product {
         public int ProductID { get; set; }
-        public string ProductName { get; set; }
+        public string ProdName { get; set; }
     }
 }
