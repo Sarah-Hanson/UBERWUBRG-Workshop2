@@ -90,5 +90,13 @@ namespace Workshop2_TravelExperts {
                 MessageBox.Show("Invalid Search Entry.\n Please add a Valid entry", "Error");
             }
         }
+
+        private void BtnAddNew_Click(object sender, EventArgs e)
+        {
+            AddPackage addPackageform = new AddPackage();
+           // addPackage.addPackage = true;
+            DialogResult result = addPackageform.ShowDialog();
+        }
+
     }
 }
