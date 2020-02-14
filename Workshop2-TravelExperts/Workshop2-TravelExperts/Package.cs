@@ -18,7 +18,7 @@ namespace Workshop2_TravelExperts {
         public DateTime PkgEndDate { get; set; }
         public string PkgDesc { get; set; }
         public decimal PkgBasePrice { get; set; }
-        public decimal PkgAgencyCommision { get; set; }
+        public decimal PkgAgencyCommission { get; set; }
       //  public BindingList<Product> ProductsList { get; set; }
         public DataTable ProductsTable { get; set; }
 

@@ -41,7 +41,7 @@ namespace Workshop2_TravelExperts
             package.PkgEndDate = dtpEnd.Value;
             package.PkgDesc = txtDesc.Text;
             package.PkgBasePrice =Convert.ToDecimal(txtBase.Text);
-            package.PkgAgencyCommision =Convert.ToDecimal(txtCommission.Text);
+            package.PkgAgencyCommission =Convert.ToDecimal(txtCommission.Text);
         }
        //to clear the text added before
         private void btnClear_Click(object sender, EventArgs e)

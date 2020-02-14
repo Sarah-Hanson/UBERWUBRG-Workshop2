@@ -24,8 +24,8 @@ namespace Workshop2_TravelExperts
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            Package newPackage = new Package();
-            newPackage.PackageId = package.PackageId;
+            Package newPack = new Package();
+            newPack.PackageId = package.PackageId;
             this.PutPackageData(newPack);
             try
             {
@@ -37,7 +37,7 @@ namespace Workshop2_TravelExperts
                 }
                 else // success
                 {
-                    customer = newCustomer;
+                    package = newPack;
                     this.DialogResult = DialogResult.OK;
                 }
             }
@@ -56,7 +56,7 @@ namespace Workshop2_TravelExperts
             txtDesc.Text = package.PkgDesc;
             txtBase.Text = Convert.ToString(package.PkgBasePrice);
 
-            txtAgency.Text = Convert.ToString(package.PkgAgencyCommision);
+            txtAgency.Text = Convert.ToString(package.PkgAgencyCommission);
         }
 
         private void btnBack_Click(object sender, EventArgs e){ //Added by BC
@@ -64,7 +64,22 @@ namespace Workshop2_TravelExperts
         }
         private void PutPackageData(Package package)
         {
+            package.PkgName = txtPkgName.Text;
+            package.PkgStartDate = dtpStart.Value;
+            package.PkgEndDate = dtpEnd.Value;
+            package.PkgDesc = txtDesc.Text;
+            package.PkgBasePrice = Convert.ToDecimal(txtBase.Text);
+            package.PkgAgencyCommission = Convert.ToDecimal(txtAgency.Text);
+        }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtPkgName.Text = "";
+            dtpStart.Text = "";
+            dtpEnd.Text = "";
+            txtBase.Text = "";
+            txtDesc.Text = "";
+            txtAgency.Text = "";
         }
     }
 }

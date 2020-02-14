@@ -58,7 +58,7 @@ namespace Workshop2_TravelExperts {
             lblDesc.Text = pack.PkgDesc;
             decimal price = decimal.Round(pack.PkgBasePrice, 2, MidpointRounding.AwayFromZero);//Rounds to the nearest Decimal Value
             lblPrice.Text = price.ToString("c");//Converts to currenct
-            decimal Commision = decimal.Round(pack.PkgAgencyCommision, 2, MidpointRounding.AwayFromZero);
+            decimal Commision = decimal.Round(pack.PkgAgencyCommission, 2, MidpointRounding.AwayFromZero);
             lblCommision.Text = Commision.ToString("c");
         }
         private void BtnAddNew_Click(object sender, EventArgs e){

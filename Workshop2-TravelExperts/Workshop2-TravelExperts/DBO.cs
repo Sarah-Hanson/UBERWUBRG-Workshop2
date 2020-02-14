@@ -80,7 +80,7 @@ namespace Workshop2_TravelExperts {
                             Package o = new Package();
                             { ReadFromDB(reader, "PackageId", out int output);              o.PackageId          = output; }
                             { ReadFromDB(reader, "PkgName", out string output);         o.PkgName        = output; }
-                            { ReadFromDB(reader, "PkgAgencyCommission", out decimal output); o.PkgAgencyCommision = output; }
+                            { ReadFromDB(reader, "PkgAgencyCommission", out decimal output); o.PkgAgencyCommission = output; }
                             { ReadFromDB(reader, "PkgBasePrice", out decimal output);       o.PkgBasePrice       = output; }
                             { ReadFromDB(reader, "PkgDesc", out string output);             o.PkgDesc            = output; }
                             { ReadFromDB(reader, "PkgEndDate", out DateTime output);        o.PkgEndDate         = output; }
@@ -271,7 +271,7 @@ namespace Workshop2_TravelExperts {
                             pack.PkgEndDate =Convert.ToDateTime(reader["PkgEndDate"]);
                             pack.PkgDesc = reader["PkgDesc"].ToString();
                             pack.PkgBasePrice = Convert.ToDecimal(reader["PkgBasePrice"]);
-                            pack.PkgAgencyCommision = Convert.ToDecimal(reader["PkgAgencyCommission"]);
+                            pack.PkgAgencyCommission = Convert.ToDecimal(reader["PkgAgencyCommission"]);
                             
                         }
                     }
@@ -296,7 +296,7 @@ namespace Workshop2_TravelExperts {
                     cmd.Parameters.AddWithValue("@PkgEndDate", pack.PkgEndDate);
                     cmd.Parameters.AddWithValue("@PkgDesc", pack.PkgDesc);
                     cmd.Parameters.AddWithValue("@PkgBasePrice", pack.PkgBasePrice);
-                    cmd.Parameters.AddWithValue("@PkgAgencyCommission", pack.PkgAgencyCommision);
+                    cmd.Parameters.AddWithValue("@PkgAgencyCommission", pack.PkgAgencyCommission);
                     conn.Open();
                     pacakgeId = (int)cmd.ExecuteScalar();
                 }
@@ -310,20 +310,20 @@ namespace Workshop2_TravelExperts {
             using (SqlConnection connection = TravelExpertsDB.GetConnection())
             {
                 string updateStatement =
-                    "UPDATE Package SET " +
+                    "UPDATE Packages SET " +
                     " PkgName = @newPkgName, " +
                     " PkgStartDate = @newPkgStartDate, " +
                     " PkgEndDate = @newPkgEndDate, " +
                     " PkgDesc = @newPkgDesc, " +
-                    " PkgBasePrice = @newPkgBasePrice " +
-                    "PkgAgencyCommission=@newPkgAgencyCommission " +
-                    "WHERE PackageId = @oldPackageId " + 
-                    " AND PkName = @oldPkgName " + 
+                    " PkgBasePrice = @newPkgBasePrice, " +
+                    " PkgAgencyCommission = @newPkgAgencyCommission " +
+                    " WHERE PackageId = @oldPackageId " + 
+                    " AND PkgName = @oldPkgName " + 
                     " AND PkgStartDate = @oldPkgStartDate " +
                     " AND PkgEndDate = @oldPkgEndDate " +
                     " AND PkgDesc = @oldPkgDesc " +
                     " AND PkgBasePrice = @oldPkgBasePrice " +
-                    " AND PkgAgencyCommission = @oldPkgAgencyCommission ";
+                    " AND PkgAgencyCommission = @oldPkgAgencyCommission " ;
                 using (SqlCommand cmd = new SqlCommand(updateStatement, connection))
                 {
                     cmd.Parameters.AddWithValue("@newPkgName", newPack.PkgName);
@@ -331,14 +331,14 @@ namespace Workshop2_TravelExperts {
                     cmd.Parameters.AddWithValue("@newPkgEndDate", newPack.PkgEndDate);
                     cmd.Parameters.AddWithValue("@newPkgDesc", newPack.PkgDesc);
                     cmd.Parameters.AddWithValue("@newPkgBasePrice", newPack.PkgBasePrice);
-                    cmd.Parameters.AddWithValue("@newPkgAgencyCommision", newPack.PkgAgencyCommision);
+                    cmd.Parameters.AddWithValue("@newPkgAgencyCommission", newPack.PkgAgencyCommission);
                     cmd.Parameters.AddWithValue("@oldPackageId", oldPack.PackageId);
                     cmd.Parameters.AddWithValue("@oldPkgName", oldPack.PkgName);
                     cmd.Parameters.AddWithValue("@oldPkgStartDate", oldPack.PkgStartDate);
                     cmd.Parameters.AddWithValue("@oldPkgEndDate", oldPack.PkgEndDate);
                     cmd.Parameters.AddWithValue("@oldPkgDesc", oldPack.PkgDesc);
                     cmd.Parameters.AddWithValue("@oldPkgBasePrice", oldPack.PkgBasePrice);
-                    cmd.Parameters.AddWithValue("@oldPkgAgencyCommision", oldPack.PkgAgencyCommision);
+                    cmd.Parameters.AddWithValue("@oldPkgAgencyCommission", oldPack.PkgAgencyCommission);
                     connection.Open();
                     count = cmd.ExecuteNonQuery(); // returns how many rows updated
                 }
