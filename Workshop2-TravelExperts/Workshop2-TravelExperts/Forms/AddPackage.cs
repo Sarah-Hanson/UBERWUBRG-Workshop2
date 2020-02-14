@@ -16,11 +16,11 @@ namespace Workshop2_TravelExperts
         {
             InitializeComponent();
         }
-        public Package package;
+        public Packages package;
         //to add new packages to the database
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            package = new Package();
+            package = new Packages();
             this.PutPackage(package);
             try
             {
@@ -34,7 +34,7 @@ namespace Workshop2_TravelExperts
 
         }
 
-        public void PutPackage(Package package)
+        public void PutPackage(Packages package)
         {
             package.PkgName = txtName.Text;
             package.PkgStartDate = dtpStart.Value;

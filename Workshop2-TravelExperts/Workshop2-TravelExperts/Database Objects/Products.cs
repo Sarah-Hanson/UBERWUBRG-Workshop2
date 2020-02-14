@@ -9,7 +9,7 @@ using System.Threading.Tasks;
  *  Holds data for the Products table
  */
 namespace Workshop2_TravelExperts {
-    class Product {
+    class Products {
         public int ProductID { get; set; }
         public string ProductName { get; set; }
     }

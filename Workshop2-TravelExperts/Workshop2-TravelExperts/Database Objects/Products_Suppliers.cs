@@ -10,7 +10,7 @@ using System.Threading.Tasks;
  *  Holds data for the Products_Suppliers table
  */
 namespace Workshop2_TravelExperts {
-    class ProductSupplier {
+    class Products_Suppliers {
         public int ProductSupplierID { get; set; }
         public int ProductID { get; set; }
     }
