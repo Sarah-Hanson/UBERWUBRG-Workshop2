@@ -89,6 +89,7 @@
   <ItemGroup>
     <Content Include="Background.png" />
     <None Include="Images\Background.png" />
+    <Content Include="Images\Button.png" />
     <Content Include="travelexperts-mssql.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

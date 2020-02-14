@@ -12,7 +12,10 @@ namespace Workshop2_TravelExperts {
 
     /// <summary>
     /// Project by: Team 8 -- Brandon Cuthbertson, Neel Pandya, Sara Hanson
-    /// See Update Notes for non-programming based updates
+    /// Set Roles:
+    /// Neel:   - Add/Edit Tables
+    /// Brandon:- Gui design and validation
+    /// Sarah:  - Database Integration
     /// </summary>
     public partial class FrmTravel : Form {
         public FrmTravel() {
@@ -41,25 +44,7 @@ namespace Workshop2_TravelExperts {
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-           
-            string val;
-             val = Convert.ToString(cmbPackages.SelectedItem);
-             if (val != null)
-            {
-                this.DisplayPacks();
 
-            }
-           
-            else
-            {
-               
-            }
-               
-
-            
-        }
         /*private void GetPacks(int PackageID)
         {
             Package package;
@@ -81,8 +66,29 @@ namespace Workshop2_TravelExperts {
             lblStart.Text = Convert.ToString(packs.PkgStartDate);
             lblEnd.Text = Convert.ToString(packs.PkgEndDate);
             lblDesc.Text = packs.PkgDesc;
-            lblPrice.Text = Convert.ToString(packs.PkgBasePrice);
-            lblCommision.Text = Convert.ToString(packs.PkgAgencyCommision);
+
+            decimal price = decimal.Round(packs.PkgBasePrice, 2, MidpointRounding.AwayFromZero);//Rounds to the nearest Decimal Value
+            lblPrice.Text = price.ToString("c");//Converts to currenct
+            decimal Commision = decimal.Round(packs.PkgAgencyCommision, 2, MidpointRounding.AwayFromZero);
+            lblCommision.Text = Commision.ToString("c");
+        }
+
+   
+
+        private void cmbPackages_DropDownClosed(object sender, EventArgs e)//Changed To Drop Down Close to remove he search button
+        {
+            string val;
+            val = Convert.ToString(cmbPackages.SelectedItem);
+            if (val != null)
+            {
+                this.DisplayPacks();
+
+            }
+
+            else
+            {
+                MessageBox.Show("Invalid Search Entry.\n Please add a Valid entry", "Error");
+            }
         }
     }
 }
