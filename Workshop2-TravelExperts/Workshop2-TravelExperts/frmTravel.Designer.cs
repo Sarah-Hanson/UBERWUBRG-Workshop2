@@ -52,6 +52,7 @@
             this.cmbPackages.Name = "cmbPackages";
             this.cmbPackages.Size = new System.Drawing.Size(323, 32);
             this.cmbPackages.TabIndex = 0;
+            this.cmbPackages.DisplayMemberChanged += new System.EventHandler(this.cmbPackages_DisplayMemberChanged);
             // 
             // btnSearch
             // 

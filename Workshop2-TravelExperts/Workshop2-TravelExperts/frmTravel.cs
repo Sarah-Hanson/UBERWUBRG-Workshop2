@@ -47,18 +47,7 @@ namespace Workshop2_TravelExperts {
         private void btnSearch_Click(object sender, EventArgs e)
         {
            
-            string val;
-             val = Convert.ToString(cmbPackages.SelectedItem);
-             if (val != null)
-            {
-                this.DisplayPacks();
-
-            }
-           
-            else
-            {
-               
-            }
+            
                
 
             
@@ -119,6 +108,22 @@ namespace Workshop2_TravelExperts {
                 {
                     //this.ClearControls();
                 }
+            }
+        }
+
+        private void cmbPackages_DisplayMemberChanged(object sender, EventArgs e)
+        {
+            string val;
+            val = Convert.ToString(cmbPackages.SelectedItem);
+            if (val != null)
+            {
+                this.DisplayPacks();
+
+            }
+
+            else
+            {
+
             }
         }
     }
