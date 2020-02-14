@@ -39,8 +39,11 @@
             this.lblCommision = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btnQuit = new System.Windows.Forms.Button();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.lblStart = new System.Windows.Forms.Label();
+            this.lblEnd = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbPackages
@@ -88,6 +91,7 @@
             // 
             // lblPackID
             // 
+            this.lblPackID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPackID.Location = new System.Drawing.Point(218, 104);
             this.lblPackID.Name = "lblPackID";
             this.lblPackID.Size = new System.Drawing.Size(322, 24);
@@ -128,6 +132,7 @@
             // 
             // lblDesc
             // 
+            this.lblDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblDesc.Location = new System.Drawing.Point(217, 188);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(323, 57);
@@ -146,9 +151,10 @@
             // 
             // lblPrice
             // 
+            this.lblPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPrice.Location = new System.Drawing.Point(217, 260);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(318, 24);
+            this.lblPrice.Size = new System.Drawing.Size(323, 24);
             this.lblPrice.TabIndex = 12;
             // 
             // label12
@@ -163,48 +169,81 @@
             // 
             // lblCommision
             // 
+            this.lblCommision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblCommision.Location = new System.Drawing.Point(217, 305);
             this.lblCommision.Name = "lblCommision";
-            this.lblCommision.Size = new System.Drawing.Size(318, 24);
+            this.lblCommision.Size = new System.Drawing.Size(323, 24);
             this.lblCommision.TabIndex = 14;
             // 
             // btnAddNew
             // 
-            this.btnAddNew.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAddNew.BackColor = System.Drawing.Color.DimGray;
             this.btnAddNew.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.Location = new System.Drawing.Point(193, 347);
+            this.btnAddNew.Location = new System.Drawing.Point(217, 347);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(168, 32);
             this.btnAddNew.TabIndex = 15;
-            this.btnAddNew.Text = "Add New Package";
+            this.btnAddNew.Text = "&Add New Package";
             this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.BtnAddNew_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnEdit.BackColor = System.Drawing.Color.DimGray;
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Location = new System.Drawing.Point(394, 347);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(182, 31);
             this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "Edit Package";
+            this.btnEdit.Text = "&Edit Package";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // dateTimePicker1
+            // btnQuit
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(222, 141);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(313, 32);
-            this.dateTimePicker1.TabIndex = 17;
+            this.btnQuit.BackColor = System.Drawing.Color.DimGray;
+            this.btnQuit.ForeColor = System.Drawing.Color.White;
+            this.btnQuit.Location = new System.Drawing.Point(582, 347);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(182, 31);
+            this.btnQuit.TabIndex = 17;
+            this.btnQuit.Text = "&Quit";
+            this.btnQuit.UseVisualStyleBackColor = false;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
-            // dateTimePicker2
+            // dtpStart
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(656, 141);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(339, 32);
-            this.dateTimePicker2.TabIndex = 18;
+            this.dtpStart.CalendarForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtpStart.CalendarMonthBackground = System.Drawing.SystemColors.MenuText;
+            this.dtpStart.Enabled = false;
+            this.dtpStart.Location = new System.Drawing.Point(18, 12);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(313, 32);
+            this.dtpStart.TabIndex = 17;
+            // 
+            // dtpEnd
+            // 
+            this.dtpEnd.Enabled = false;
+            this.dtpEnd.Location = new System.Drawing.Point(337, 13);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(339, 32);
+            this.dtpEnd.TabIndex = 18;
+            // 
+            // lblStart
+            // 
+            this.lblStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblStart.Location = new System.Drawing.Point(218, 147);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(322, 24);
+            this.lblStart.TabIndex = 19;
+            // 
+            // lblEnd
+            // 
+            this.lblEnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblEnd.Location = new System.Drawing.Point(655, 149);
+            this.lblEnd.Name = "lblEnd";
+            this.lblEnd.Size = new System.Drawing.Size(322, 24);
+            this.lblEnd.TabIndex = 20;
             // 
             // FrmTravel
             // 
@@ -214,8 +253,11 @@
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1007, 413);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.lblEnd);
+            this.Controls.Add(this.lblStart);
+            this.Controls.Add(this.btnQuit);
+            this.Controls.Add(this.dtpEnd);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.lblCommision);
@@ -262,8 +304,13 @@
         private System.Windows.Forms.Label lblCommision;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+
+        private System.Windows.Forms.Button btnQuit;
+
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.Label lblStart;
+        private System.Windows.Forms.Label lblEnd;
     }
 }
 

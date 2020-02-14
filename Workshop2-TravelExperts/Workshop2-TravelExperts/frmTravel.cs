@@ -25,6 +25,9 @@ namespace Workshop2_TravelExperts {
         {
             DBO.GetObjectListFromDB(out packages);
             this.LoadComboBox();
+            dtpEnd.Visible = false;
+            dtpStart.Visible = false;
+
         }
         private void LoadComboBox()
         {
@@ -74,22 +77,20 @@ namespace Workshop2_TravelExperts {
             int packIndex = cmbPackages.SelectedIndex;
             pack = packages[packIndex];
             lblPackID.Text = Convert.ToString(pack.PackageId);
-            dateTimePicker1.Value = Convert.ToDateTime(pack.PkgStartDate);
-            dateTimePicker2.Text = Convert.ToString(pack.PkgEndDate);
-            //lblStart.Text = Convert.ToString(pack.PkgStartDate);
-           // lblEnd.Text = Convert.ToString(pack.PkgEndDate);
+            dtpStart.Value = Convert.ToDateTime(pack.PkgStartDate);
+            dtpEnd.Text = Convert.ToString(pack.PkgEndDate);
+            lblStart.Text = (pack.PkgStartDate).ToString("MMMM dd, yyyy");
+           lblEnd.Text = (pack.PkgEndDate).ToString("MMMM dd, yyyy");
             lblDesc.Text = pack.PkgDesc;
             lblPrice.Text = Convert.ToString(pack.PkgBasePrice);
             lblCommision.Text = Convert.ToString(pack.PkgAgencyCommision);
         }
-
         private void BtnAddNew_Click(object sender, EventArgs e)
         {
             AddPackage addPackageform = new AddPackage();
            // addPackage.addPackage = true;
             DialogResult result = addPackageform.ShowDialog();
         }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Package pack = packages[cmbPackages.SelectedIndex];
@@ -115,6 +116,26 @@ namespace Workshop2_TravelExperts {
                     //this.ClearControls();
                 }
             }
+        }
+        private void cmbPackages_SelectedValueChanged(object sender, EventArgs e)//Removed Search Button for a removed index changed
+        {
+            string val;
+            val = Convert.ToString(cmbPackages.SelectedItem);
+            if (val != null)
+            {
+                this.DisplayPacks();
+
+            }
+
+            else
+            {
+                MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
+            }
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)//added by bc
+        {
+            Close();
         }
     }
 }
