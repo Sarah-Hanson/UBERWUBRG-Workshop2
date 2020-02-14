@@ -52,6 +52,8 @@ namespace Workshop2_TravelExperts
             txtDesc.Text = "";
             txtBase.Text = "";
             txtCommission.Text = "";
+            dtpStart.Value = DateTime.Today;
+            dtpEnd.Value = DateTime.Today;
         }
 
         private void btnBack_Click(object sender, EventArgs e)

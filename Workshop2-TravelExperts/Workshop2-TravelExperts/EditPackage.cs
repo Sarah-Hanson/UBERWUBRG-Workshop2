@@ -87,6 +87,8 @@ namespace Workshop2_TravelExperts
             txtBase.Text = "";
             txtDesc.Text = "";
             txtAgency.Text = "";
+            dtpStart.Value = DateTime.Today;
+            dtpEnd.Value = DateTime.Today;
         }
     }
 }
