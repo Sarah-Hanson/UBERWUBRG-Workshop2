@@ -24,7 +24,7 @@ namespace Workshop2_TravelExperts {
 
 
             //Neels Code
-            Package newPack = new Package();
+            Packages newPack = new Packages();
             newPack.PackageId = package.PackageId;
             this.PutPackageData(newPack);
             try {

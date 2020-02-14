@@ -9,7 +9,7 @@ using System.Threading.Tasks;
  *  Holds data for the Packages_Products_Suppliers table
  */
 namespace Workshop2_TravelExperts {
-    class Packages_Products_Suppliers {
+    public class Packages_Products_Suppliers {
         public int PackageID { get; set; }
         public int ProductSupplierID { get; set; }
     }

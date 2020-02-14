@@ -118,7 +118,7 @@ namespace Workshop2_TravelExperts
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Package pack = packages[cmbPackages.SelectedIndex];
+            Packages pack = packages[cmbPackages.SelectedIndex];
             ToAddProduct addProduct = new ToAddProduct(pack);
             DialogResult result = addProduct.ShowDialog();
 
