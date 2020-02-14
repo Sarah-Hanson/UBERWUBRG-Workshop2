@@ -33,6 +33,8 @@ namespace Workshop2_TravelExperts {
         private void FrmTravel_Load(object sender, EventArgs e)
         {
             this.LoadComboBox();
+            dtpEnd.Visible = false;
+            dtpStart.Visible = false;
             
         }
 
@@ -73,8 +75,8 @@ namespace Workshop2_TravelExperts {
             lblPackID.Text = Convert.ToString(pack.PackageId);
             dtpStart.Value = Convert.ToDateTime(pack.PkgStartDate);
             dtpEnd.Text = Convert.ToString(pack.PkgEndDate);
-            //lblStart.Text = Convert.ToString(pack.PkgStartDate);
-           // lblEnd.Text = Convert.ToString(pack.PkgEndDate);
+            lblStart.Text = (pack.PkgStartDate).ToString("MMMM dd, yyyy");
+           lblEnd.Text = (pack.PkgEndDate).ToString("MMMM dd, yyyy");
             lblDesc.Text = pack.PkgDesc;
             decimal price = decimal.Round(pack.PkgBasePrice, 2, MidpointRounding.AwayFromZero);//Rounds to the nearest Decimal Value
             lblPrice.Text = price.ToString("c");//Converts to currenct
