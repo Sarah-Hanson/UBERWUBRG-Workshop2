@@ -78,7 +78,7 @@
     <Compile Include="ToAddProduct.Designer.cs">
       <DependentUpon>ToAddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Validate.cs" />
+    <Compile Include="Validator.cs" />
     <EmbeddedResource Include="AddPackage.resx">
       <DependentUpon>AddPackage.cs</DependentUpon>
     </EmbeddedResource>
