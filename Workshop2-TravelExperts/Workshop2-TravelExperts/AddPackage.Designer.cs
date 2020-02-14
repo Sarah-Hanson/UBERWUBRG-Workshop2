@@ -43,6 +43,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -122,7 +123,7 @@
             this.txtName.Location = new System.Drawing.Point(331, 26);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(460, 32);
+            this.txtName.Size = new System.Drawing.Size(322, 32);
             this.txtName.TabIndex = 6;
             // 
             // txtDesc
@@ -130,7 +131,7 @@
             this.txtDesc.Location = new System.Drawing.Point(331, 168);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(460, 32);
+            this.txtDesc.Size = new System.Drawing.Size(322, 32);
             this.txtDesc.TabIndex = 9;
             // 
             // txtBase
@@ -138,7 +139,7 @@
             this.txtBase.Location = new System.Drawing.Point(331, 213);
             this.txtBase.Margin = new System.Windows.Forms.Padding(4);
             this.txtBase.Name = "txtBase";
-            this.txtBase.Size = new System.Drawing.Size(460, 32);
+            this.txtBase.Size = new System.Drawing.Size(322, 32);
             this.txtBase.TabIndex = 10;
             // 
             // txtCommission
@@ -146,42 +147,57 @@
             this.txtCommission.Location = new System.Drawing.Point(331, 264);
             this.txtCommission.Margin = new System.Windows.Forms.Padding(4);
             this.txtCommission.Name = "txtCommission";
-            this.txtCommission.Size = new System.Drawing.Size(460, 32);
+            this.txtCommission.Size = new System.Drawing.Size(322, 32);
             this.txtCommission.TabIndex = 11;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(46, 342);
+            this.btnSubmit.BackColor = System.Drawing.Color.DimGray;
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(266, 324);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(245, 33);
+            this.btnSubmit.Size = new System.Drawing.Size(182, 31);
             this.btnSubmit.TabIndex = 12;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Text = "&Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(331, 342);
+            this.btnClear.BackColor = System.Drawing.Color.DimGray;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(471, 324);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(236, 33);
+            this.btnClear.Size = new System.Drawing.Size(182, 31);
             this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Text = "&Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // dtpStart
             // 
             this.dtpStart.Location = new System.Drawing.Point(331, 82);
             this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(460, 32);
+            this.dtpStart.Size = new System.Drawing.Size(322, 32);
             this.dtpStart.TabIndex = 14;
             // 
             // dtpEnd
             // 
             this.dtpEnd.Location = new System.Drawing.Point(331, 129);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(460, 32);
+            this.dtpEnd.Size = new System.Drawing.Size(322, 32);
             this.dtpEnd.TabIndex = 15;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.DimGray;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(78, 324);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(182, 31);
+            this.btnBack.TabIndex = 19;
+            this.btnBack.Text = "<&Back";
+            this.btnBack.UseVisualStyleBackColor = false;
             // 
             // AddPackage
             // 
@@ -189,6 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(838, 633);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.btnClear);
@@ -230,5 +247,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.Button btnBack;
     }
 }
