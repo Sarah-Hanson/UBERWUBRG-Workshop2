@@ -19,7 +19,6 @@ namespace Workshop2_TravelExperts {
         public Package Package;
         public FrmTravel() {
             InitializeComponent();
-
         }
         private void FrmTravel_Load(object sender, EventArgs e)
         {
@@ -44,35 +43,17 @@ namespace Workshop2_TravelExperts {
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           
             string val;
              val = Convert.ToString(cmbPackages.SelectedItem);
-             if (val != null)
-            {
+            if (val != null) {
                 this.DisplayPacks();
-
             }
-           
-            else
-            {
-               
+            else {
+                // Roll over and crash
             }
-               
-
-            
+ 
         }
-        private void GetPack(int PackageID)
-        {
-            Package package;
-            try {
-                package = TravelExpertsDB.GetPacks(PackageID);
-            }
-            catch(Exception ex) {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-        }
-        private void DisplayPacks()
-        {
+        private void DisplayPacks() {
             Package pack = new Package();
             int packIndex = cmbPackages.SelectedIndex;
             pack = packages[packIndex];
@@ -85,54 +66,43 @@ namespace Workshop2_TravelExperts {
             lblPrice.Text = Convert.ToString(pack.PkgBasePrice);
             lblCommision.Text = Convert.ToString(pack.PkgAgencyCommision);
         }
-        private void BtnAddNew_Click(object sender, EventArgs e)
-        {
+        private void BtnAddNew_Click(object sender, EventArgs e){
             AddPackage addPackageform = new AddPackage();
            // addPackage.addPackage = true;
             DialogResult result = addPackageform.ShowDialog();
         }
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
+        private void btnEdit_Click(object sender, EventArgs e){
             Package pack = packages[cmbPackages.SelectedIndex];
             EditPackage editpackform = new EditPackage(pack);
             DialogResult result = editpackform.ShowDialog();
            
             editpackform.package = Package;
            
-            if (result == DialogResult.OK)
-            {
+            if (result == DialogResult.OK) {
                 Package = editpackform.package;
                 //this.DisplayPacks(p);
             }
             else if (result == DialogResult.Retry)
             {
-                this.GetPack(Package.PackageId);
-                if (Package != null)
-                {
+                //this.GetPack(Package.PackageId);
+                if (Package != null) {
                     this.DisplayPacks();
                 }
-                else
-                {
+                else {
                     //this.ClearControls();
                 }
             }
         }
-        private void cmbPackages_SelectedValueChanged(object sender, EventArgs e)//Removed Search Button for a removed index changed
-        {
+        private void cmbPackages_SelectedValueChanged(object sender, EventArgs e) {//Removed Search Button for a removed index changed
             string val;
             val = Convert.ToString(cmbPackages.SelectedItem);
-            if (val != null)
-            {
+            if (val != null) {
                 this.DisplayPacks();
-
             }
-
-            else
-            {
+            else {
                 MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
             }
         }
-
         private void btnQuit_Click(object sender, EventArgs e)//added by bc
         {
             Close();
