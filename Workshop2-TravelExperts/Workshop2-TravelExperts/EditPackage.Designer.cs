@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPackage));
             this.PackageId = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,12 +44,15 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PackageId
             // 
             this.PackageId.AutoSize = true;
+            this.PackageId.BackColor = System.Drawing.Color.Transparent;
+            this.PackageId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.PackageId.Location = new System.Drawing.Point(35, 52);
             this.PackageId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PackageId.Name = "PackageId";
@@ -59,6 +63,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(35, 108);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -69,6 +75,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(35, 163);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -79,6 +87,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(35, 214);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -89,6 +99,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(35, 272);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -99,6 +111,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(35, 326);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
@@ -109,6 +123,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(35, 380);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
@@ -118,6 +134,8 @@
             // 
             // txtPkgName
             // 
+            this.txtPkgName.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtPkgName.ForeColor = System.Drawing.SystemColors.Window;
             this.txtPkgName.Location = new System.Drawing.Point(319, 100);
             this.txtPkgName.Name = "txtPkgName";
             this.txtPkgName.Size = new System.Drawing.Size(378, 32);
@@ -125,6 +143,8 @@
             // 
             // txtDesc
             // 
+            this.txtDesc.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtDesc.ForeColor = System.Drawing.SystemColors.Window;
             this.txtDesc.Location = new System.Drawing.Point(319, 264);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(378, 32);
@@ -132,6 +152,8 @@
             // 
             // txtBase
             // 
+            this.txtBase.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtBase.ForeColor = System.Drawing.SystemColors.Window;
             this.txtBase.Location = new System.Drawing.Point(319, 318);
             this.txtBase.Name = "txtBase";
             this.txtBase.Size = new System.Drawing.Size(378, 32);
@@ -139,6 +161,8 @@
             // 
             // txtAgency
             // 
+            this.txtAgency.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtAgency.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAgency.Location = new System.Drawing.Point(319, 372);
             this.txtAgency.Name = "txtAgency";
             this.txtAgency.Size = new System.Drawing.Size(378, 32);
@@ -160,7 +184,8 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(319, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(378, 37);
@@ -169,28 +194,46 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(39, 459);
+            this.btnSubmit.BackColor = System.Drawing.Color.DimGray;
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSubmit.Location = new System.Drawing.Point(515, 465);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(281, 35);
+            this.btnSubmit.Size = new System.Drawing.Size(182, 31);
             this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Text = "&Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.DimGray;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(139, 465);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(182, 31);
+            this.btnBack.TabIndex = 18;
+            this.btnBack.Text = "<&Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(350, 459);
+            this.btnClear.BackColor = System.Drawing.Color.DimGray;
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClear.Location = new System.Drawing.Point(327, 465);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(302, 35);
+            this.btnClear.Size = new System.Drawing.Size(182, 31);
             this.btnClear.TabIndex = 16;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Text = "&Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
             // EditPackage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(838, 633);
+            this.BackgroundImage = global::Workshop2_TravelExperts.Properties.Resources.Background;
+            this.ClientSize = new System.Drawing.Size(714, 508);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label1);
@@ -208,7 +251,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PackageId);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditPackage";
             this.Text = "EditPackage";
             this.Load += new System.EventHandler(this.EditPackage_Load);
@@ -234,6 +278,7 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnClear;
     }
 }

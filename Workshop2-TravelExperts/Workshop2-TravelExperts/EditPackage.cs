@@ -20,7 +20,7 @@ namespace Workshop2_TravelExperts
         public Package package;
         private void EditPackage_Load(object sender, EventArgs e)
         {
-            this.DisplayPackage();
+            //this.DisplayPackage();
 
         }
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -39,6 +39,10 @@ namespace Workshop2_TravelExperts
             txtAgency.Text =Convert.ToString(package.PkgAgencyCommision);
         }
 
-       
+        private void btnBack_Click(object sender, EventArgs e)//added by BC
+        {
+            
+            this.Close();
+        }
     }
 }

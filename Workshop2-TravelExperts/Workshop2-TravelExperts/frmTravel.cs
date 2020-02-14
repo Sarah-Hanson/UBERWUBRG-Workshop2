@@ -130,5 +130,10 @@ namespace Workshop2_TravelExperts {
                 MessageBox.Show("Error\n Selected Value Error: VALUE NULL", "ERROR");
             }
         }
+
+        private void btnQuit_Click(object sender, EventArgs e)//added by bc
+        {
+            Close();
+        }
     }
 }
