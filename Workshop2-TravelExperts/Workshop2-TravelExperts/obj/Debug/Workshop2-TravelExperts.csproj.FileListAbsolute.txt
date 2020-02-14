@@ -28,5 +28,10 @@ C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Wor
 C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.EditPackage.resources
 C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.AddPackage.resources
 C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.EditPackage.resources
-C:\Users\826725\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.ToAddProduct.resources
-C:\Users\840434\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.ToAddProduct.resources
+
+C:\Users\833878\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.AddPackage.resources
+C:\Users\833878\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.EditPackage.resources
+C:\Users\833878\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.FrmTravel.resources
+C:\Users\833878\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2_TravelExperts.Properties.Resources.resources
+C:\Users\833878\Documents\GitHub\UBERWUBRG-Workshop2\Workshop2-TravelExperts\Workshop2-TravelExperts\obj\Debug\Workshop2-TravelExperts.csproj.GenerateResource.cache
+
