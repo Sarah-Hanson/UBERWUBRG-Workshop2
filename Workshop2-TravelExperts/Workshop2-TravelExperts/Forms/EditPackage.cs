@@ -20,15 +20,8 @@ namespace Workshop2_TravelExperts {
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {   //brandons validations
-            
-            if (Validator.IsPresent(txtPkgName, "Package Name"))//validates 
-            {
 
-            }
-            else
-            {
 
-            }
 
             //Neels Code
             Packages newPack = new Packages();
